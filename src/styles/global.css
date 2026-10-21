@@ -1,0 +1,118 @@
+/* Reset + base. Every value comes from variables.css. */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 80px; }
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg, iframe, video { display: block; max-width: 100%; }
+img { object-fit: cover; transition: transform 0.55s var(--ease), filter 0.55s var(--ease), opacity 0.55s var(--ease); }
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition) var(--ease), transform var(--transition) var(--ease), opacity var(--transition) var(--ease), background var(--transition) var(--ease), border-color var(--transition) var(--ease);
+}
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; transition: transform var(--transition) var(--ease), opacity var(--transition) var(--ease), border-color var(--transition) var(--ease), background var(--transition) var(--ease); }
+ul { list-style: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-regular);
+  color: var(--color-white);
+  line-height: var(--lh-heading);
+}
+
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+::selection { background: var(--color-accent); color: var(--color-white); }
+
+/* ---------- Layout helpers ---------- */
+.container {
+  width: min(100% - 2 * var(--section-padding-x), var(--container-max-width));
+  margin-inline: auto;
+}
+.section { padding-block: var(--section-padding-y); position: relative; }
+.section--brown { background: var(--color-primary-dark); }
+
+.eyebrow {
+  display: block;
+  font-size: var(--fs-small);
+  line-height: var(--lh-body);
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+/* Orange square bullet used in labels */
+.dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  background: var(--color-accent);
+  flex: none;
+}
+
+.logo { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-heading); font-size: 32px; line-height: 1; color: var(--color-white); }
+
+/* Round white arrow button used on cards */
+.arrow-circle {
+  display: grid; place-items: center;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-black);
+  transition: transform var(--transition) var(--ease), background var(--transition) var(--ease), color var(--transition) var(--ease);
+}
+
+/* ---------- Responsive scale: tokens shrink, components follow ---------- */
+@media (max-width: 1024px) {
+  :root {
+    --fs-h1: 48px;
+    --fs-poppins: 52px;
+    --fs-h2: 40px;
+    --fs-h3: 32px;
+    --fs-h4: 28px;
+    --section-padding-y: 96px;
+    --gap-lg: 56px;
+  }
+}
+@media (max-width: 768px) {
+  :root {
+    --fs-h1: 40px;
+    --fs-poppins: 44px;
+    --fs-h2: 34px;
+    --fs-h3: 28px;
+    --fs-h4: 24px;
+    --fs-h5: 22px;
+    --section-padding-y: 72px;
+    --gap-lg: 40px;
+    --card-padding: 20px;
+  }
+}
+@media (max-width: 480px) {
+  :root {
+    --fs-poppins: 38px;
+    --fs-h2: 28px;
+    --fs-h3: 24px;
+    --fs-h4: 22px;
+    --fs-h5: 20px;
+    --fs-h6: 18px;
+    --section-padding-y: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+}
