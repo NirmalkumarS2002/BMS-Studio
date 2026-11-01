@@ -12,6 +12,7 @@ import Contact from "./Home/Contact/Contact";
 import Blog from "./Home/Blog/Blog";
 import CTA from "./Home/CTA/CTA";
 import Footer from "./Home/Footer/Footer";
+import CookieConsent from "./Home/CookieConsent/CookieConsent";
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
@@ -49,6 +50,7 @@ export default function App() {
         <CTA />
       </main>
       <Footer />
+      <CookieConsent />
     </>
   );
 }

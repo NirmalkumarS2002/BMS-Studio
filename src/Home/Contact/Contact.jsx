@@ -5,15 +5,32 @@ import { serviceOptions } from "../../data/content";
 import "./Contact.css";
 
 const initial = { name: "", phone: "", service: "", message: "" };
+const draftKey = "bms-contact-draft";
+
+function readDraft() {
+  try {
+    const draft = JSON.parse(window.sessionStorage.getItem(draftKey));
+    if (!draft || typeof draft !== "object") return initial;
+    return Object.fromEntries(Object.keys(initial).map((key) => [key, typeof draft[key] === "string" ? draft[key] : ""]));
+  } catch {
+    return initial;
+  }
+}
 
 export default function Contact() {
-  const [values, setValues] = useState(initial);
+  const [values, setValues] = useState(readDraft);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle"); // idle | sending | sent
 
   const onChange = (e) => {
     const { name, value } = e.target;
-    setValues((v) => ({ ...v, [name]: value }));
+    const nextValues = { ...values, [name]: value };
+    setValues(nextValues);
+    try {
+      window.sessionStorage.setItem(draftKey, JSON.stringify(nextValues));
+    } catch {
+      // The form remains usable when session storage is unavailable.
+    }
     if (errors[name]) setErrors((er) => ({ ...er, [name]: undefined }));
   };
 
@@ -36,6 +53,11 @@ export default function Contact() {
     setTimeout(() => {
       setStatus("sent");
       setValues(initial);
+      try {
+        window.sessionStorage.removeItem(draftKey);
+      } catch {
+        // The form remains usable when session storage is unavailable.
+      }
     }, 900);
   };
 
