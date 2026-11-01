@@ -1,5 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import "lenis/dist/lenis.css";
 import "./styles/variables.css";
 import "./styles/global.css";
 import App from "./App.jsx";

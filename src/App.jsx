@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Lenis from "lenis";
 import Header from "./Home/Header/Header";
 import Hero from "./Home/Hero/Hero";
 import FeaturedProjects from "./Home/FeaturedProjects/FeaturedProjects";
@@ -23,6 +24,18 @@ export default function App() {
       return "dark";
     }
   });
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      autoRaf: true,
+      anchors: { offset: -80 },
+      lerp: 0.075,
+      respectReducedMotion: true,
+      wheelMultiplier: 0.9,
+    });
+
+    return () => lenis.destroy();
+  }, []);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;

@@ -14,8 +14,7 @@ function ProjectCard({ p, index }) {
       style={{ order: p.order }}
     >
       <img className="project__img" src={p.img} alt="" loading="lazy" />
-      <div className="project__shade" />
-
+      
       <a href="#" className="project__link" aria-label={p.title}>
         <span className="arrow-circle project__arrow"><ArrowUpRight width={20} height={20} /></span>
       </a>

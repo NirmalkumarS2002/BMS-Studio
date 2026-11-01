@@ -19,7 +19,7 @@ export default function Services() {
             <Reveal key={s.title} variant="up" delay={(i % 3) * 120}>
               <a href="#contact" className="service">
                 <img className="service__img" src={s.img} alt="" loading="lazy" />
-                <div className="service__shade" />
+                
                 <div className="service__tint" />
                 <span className="arrow-circle service__arrow"><ArrowUpRight width={20} height={20} /></span>
                 <div className="service__body">

@@ -1,4 +1,4 @@
-.contact { background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-primary) 100%); }
+.contact { background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-primary) 100%); overflow-x: hidden; }
 
 .contact__grid {
   display: grid;
@@ -6,8 +6,8 @@
   gap: var(--gap-lg);
   align-items: start;
 }
-.contact__info { display: flex; flex-direction: column; gap: 0; }
-.contact__title { font-size: var(--fs-h2); margin: 8px 0 var(--gap-lg); max-width: 10em; }
+.contact__info { display: flex; flex-direction: column; gap: 0; min-width: 0; }
+.contact__title { font-size: var(--fs-h2); margin: 8px 0 var(--gap-lg); max-width: 10em; overflow-wrap: anywhere; }
 .contact__map {
   margin-top: var(--gap-lg);
   height: 232px;
@@ -19,15 +19,16 @@
 .contact__map:hover iframe { filter: none; }
 
 /* ---------- Form ---------- */
-.form { display: flex; flex-direction: column; gap: var(--gap-sm); }
+.form { display: flex; flex-direction: column; gap: var(--gap-sm); min-width: 0; }
 .form__row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap-sm); }
 
-.field { display: flex; flex-direction: column; gap: 12px; }
+.field { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
 .field > span { color: var(--color-white); font-weight: var(--fw-semibold); line-height: 1.4; }
 .field input,
 .field select,
 .field textarea {
   width: 100%;
+  min-width: 0;
   padding: 16px;
   font: inherit;
   color: var(--color-white);
@@ -61,12 +62,44 @@
 .form__ok { color: var(--color-white); animation: fade-up calc(var(--transition) * 2) var(--ease); }
 @keyframes fade-up { from { opacity: 0; transform: translateY(8px); } }
 
+/* ---------- Tablet ---------- */
 @media (max-width: 900px) {
   .contact__grid { grid-template-columns: 1fr; }
   .contact__title { max-width: none; margin-bottom: var(--gap-sm); }
   .contact__map { margin-top: var(--gap-sm); }
 }
+
+/* ---------- Mobile ---------- */
 @media (max-width: 560px) {
   .form__row { grid-template-columns: 1fr; }
   .form__actions .btn { width: 100%; }
+}
+
+/* ---------- Small phones (320 x 557) ---------- */
+@media (max-width: 360px) {
+  .contact__grid { gap: 20px; }
+  .contact__title { font-size: clamp(24px, 8vw, 28px); line-height: 1.2; margin: 6px 0 12px; }
+  .contact__map { height: 170px; margin-top: 12px; }
+
+  .form { gap: 12px; }
+  .form__row { gap: 12px; }
+  .field { gap: 8px; }
+  .field > span { font-size: 14px; }
+  .field input,
+  .field select,
+  .field textarea {
+    padding: 12px;
+    font-size: 16px; /* stops iOS zooming into the field */
+  }
+  .field select { padding-right: 36px; background-position: right 12px center; }
+  .field textarea { min-height: 110px; }
+  .field em { font-size: 12px; }
+
+  .form__actions { gap: 12px; margin-top: 4px; }
+}
+
+/* ---------- Short screens (height ~557px) ---------- */
+@media (max-height: 600px) and (max-width: 560px) {
+  .contact__map { height: 150px; }
+  .field textarea { min-height: 96px; }
 }

@@ -32,7 +32,7 @@ export default function Hero() {
             className={`hero__bg-image ${index === activeSlide ? "is-active" : ""}`}
           />
         ))}
-        <div className="hero__shade" />
+        {/* <div className="hero__shade" /> */}
       </div>
 
       <div className="container hero__inner">
