@@ -3,15 +3,12 @@ import { useEffect, useRef, useState } from "react";
 /** Returns [ref, inView]. Flips to true once the element scrolls into view. */
 export default function useInView({ threshold = 0.15, rootMargin = "0px 0px -8% 0px", once = true } = {}) {
   const ref = useRef(null);
-  const [inView, setInView] = useState(false);
+  const [inView, setInView] = useState(() => typeof IntersectionObserver === "undefined");
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    if (typeof IntersectionObserver === "undefined") {
-      setInView(true);
-      return;
-    }
+    if (typeof IntersectionObserver === "undefined") return;
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
