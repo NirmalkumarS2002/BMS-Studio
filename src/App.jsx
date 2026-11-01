@@ -42,10 +42,10 @@ export default function App() {
         <Services />
         <Pricing />
         <Process />
-        <Testimonials />
+        <Testimonials />  
         <Awards />
         <Contact />
-        <Blog />
+        <Blog />  
         <CTA />
       </main>
       <Footer />
