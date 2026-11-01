@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Questrial&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Poppins:wght@400;500;600&display=swap");
 
 :root {
+  color-scheme: dark;
   /* ===== Colors (from Elementor kit) ===== */
   --color-bg: #121212;
   --color-text: #B9B9B9;
@@ -66,4 +67,16 @@
 
   /* ===== Extra (easing used by the animations) ===== */
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: #F7F9F7;
+  --color-text: #515B55;
+  --color-white: #202923;
+  --color-black: #FFFFFF;
+  --color-accent: #D85D19;
+  --color-primary: #E7ECE7;
+  --color-primary-dark: #EDF1ED;
+  --color-border: #C8D1CA;
 }

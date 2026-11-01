@@ -13,6 +13,12 @@ export const Menu = (p) => (
 export const Close = (p) => (
   <svg {...base} {...stroke} {...p}><path d="M6 6l12 12M18 6 6 18" /></svg>
 );
+export const Sun = (p) => (
+  <svg {...base} {...stroke} {...p}><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" /></svg>
+);
+export const Moon = (p) => (
+  <svg {...base} {...stroke} {...p}><path d="M20.2 15.1A8.5 8.5 0 0 1 8.9 3.8 8.5 8.5 0 1 0 20.2 15.1Z" /></svg>
+);
 export const Calendar = (p) => (
   <svg {...base} {...stroke} {...p}><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>
 );

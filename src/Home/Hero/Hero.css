@@ -144,6 +144,22 @@
 }
 .hero__social a:hover { color: var(--color-accent); transform: translateY(-4px) scale(1.08); filter: drop-shadow(0 10px 20px rgba(255, 115, 29, 0.35)); }
 
+:root[data-theme="light"] .hero__title,
+:root[data-theme="light"] .hero__tagline,
+:root[data-theme="light"] .hero__social p,
+:root[data-theme="light"] .hero__social a,
+:root[data-theme="light"] .hero-card h3 { color: #FFFFFF; }
+
+:root[data-theme="light"] .hero__shade {
+  background:
+    linear-gradient(180deg, rgba(18, 18, 18, 0.7) 0%, transparent 28%),
+    linear-gradient(0deg, rgba(18, 18, 18, 0.85) 0%, transparent 40%),
+    rgba(48, 29, 15, 0.28);
+}
+
+:root[data-theme="light"] .header:not(.is-scrolled) .header__logo .logo,
+:root[data-theme="light"] .header:not(.is-scrolled) .theme-toggle { color: #FFFFFF; }
+
 @keyframes card-float {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-4px); }

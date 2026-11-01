@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Header from "./Home/Header/Header";
 import Hero from "./Home/Hero/Hero";
 import FeaturedProjects from "./Home/FeaturedProjects/FeaturedProjects";
@@ -13,9 +14,27 @@ import CTA from "./Home/CTA/CTA";
 import Footer from "./Home/Footer/Footer";
 
 export default function App() {
+  const [theme, setTheme] = useState(() => {
+    try {
+      return window.localStorage.getItem("bms-theme") === "light" ? "light" : "dark";
+    } catch {
+      return "dark";
+    }
+  });
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme === "dark" ? "#121212" : "#F7F9F7");
+    try {
+      window.localStorage.setItem("bms-theme", theme);
+    } catch {
+      // Theme still works for this page when storage is unavailable.
+    }
+  }, [theme]);
+
   return (
     <>
-      <Header />
+      <Header theme={theme} onThemeChange={() => setTheme((current) => current === "dark" ? "light" : "dark")} />
       <main>
         <Hero />
         <FeaturedProjects />

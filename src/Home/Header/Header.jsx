@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { Logo, Plus, Menu, Close } from "../ui/Icons";
+import { Logo, Plus, Menu, Close, Sun, Moon } from "../ui/Icons";
 import Button from "../ui/Button";
 import { nav } from "../../data/content";
 import "./Header.css";
 
-export default function Header() {
+export default function Header({ theme, onThemeChange }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileHidden, setMobileHidden] = useState(false);
   const [open, setOpen] = useState(false);
@@ -106,17 +106,28 @@ export default function Header() {
           </ul>
         </nav>
 
-        <Button href="#contact" className="header__cta">Book a Shoot</Button>
-
-        <button
-          className="header__burger"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          aria-controls="primary-nav"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <Close width={24} height={24} /> : <Menu width={24} height={24} />}
-        </button>
+        <div className="header__actions">
+          <Button href="#contact" className="header__cta">Book a Shoot</Button>
+          <button
+            type="button"
+            className="theme-toggle"
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            aria-pressed={theme === "light"}
+            onClick={onThemeChange}
+          >
+            {theme === "dark" ? <Sun width={20} height={20} /> : <Moon width={20} height={20} />}
+          </button>
+          <button
+            className="header__burger"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="primary-nav"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <Close width={24} height={24} /> : <Menu width={24} height={24} />}
+          </button>
+        </div>
       </div>
     </header>
   );
