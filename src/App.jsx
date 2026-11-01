@@ -13,6 +13,7 @@ import Blog from "./Home/Blog/Blog";
 import CTA from "./Home/CTA/CTA";
 import Footer from "./Home/Footer/Footer";
 import CookieConsent from "./Home/CookieConsent/CookieConsent";
+import SocialIcons from "./Home/Socialicon/SocialIcon";
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
@@ -37,6 +38,7 @@ export default function App() {
     <>
       <Header theme={theme} onThemeChange={() => setTheme((current) => current === "dark" ? "light" : "dark")} />
       <main>
+        <SocialIcons />
         <Hero />
         <FeaturedProjects />
         <Experience />

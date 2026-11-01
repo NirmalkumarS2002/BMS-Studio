@@ -49,7 +49,7 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={850}>
-            <Button href="#projects" variant="outline">View Portfolio</Button>
+            <Button href="#projects" variant="outline">View Projects</Button>
           </Reveal>
         </div>
 
