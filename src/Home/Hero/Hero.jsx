@@ -38,14 +38,14 @@ export default function Hero() {
       <div className="container hero__inner">
         <div className="hero__top">
           <h1 className="hero__title" aria-label="BMS Studio">
-            {"BMStudio".split("").map((c, i) => (
+            {"BMStudio".split(" ").map((c, i) => (
               <span key={i} className="hero__letter" style={{ "--i": i }} aria-hidden="true">{c}</span>
             ))}
           </h1>
 
           <Reveal as="p" delay={700} className="hero__tagline">
-            <span>Photography for people,</span>
-            <span>moments and businesses in Karur</span>
+            <span>Photography studio in Karur</span>
+            <span>Portraits, weddings, events &amp; brands</span>
           </Reveal>
 
           <Reveal delay={850}>

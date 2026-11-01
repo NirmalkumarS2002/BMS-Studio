@@ -4,7 +4,7 @@ import Button from "../ui/Button";
 import { serviceOptions } from "../../data/content";
 import "./Contact.css";
 
-const initial = { name: "", email: "", service: "", message: "" };
+const initial = { name: "", phone: "", service: "", message: "" };
 
 export default function Contact() {
   const [values, setValues] = useState(initial);
@@ -20,7 +20,7 @@ export default function Contact() {
   const validate = () => {
     const er = {};
     if (!values.name.trim()) er.name = "Please enter your name";
-    if (!/^\S+@\S+\.\S+$/.test(values.email)) er.email = "Please enter a valid email";
+    if (!/^\d{10}$/.test(values.phone)) er.phone = "Please enter a valid 10-digit phone number";
     if (!values.service) er.service = "Please choose a service";
     if (values.message.trim().length < 10) er.message = "Tell us a little more (10+ characters)";
     return er;
@@ -66,9 +66,9 @@ export default function Contact() {
               {errors.name && <em>{errors.name}</em>}
             </label>
             <label className="field">
-              <span>Your Email</span>
-              <input name="email" type="email" value={values.email} onChange={onChange} placeholder="ex: johndoe@email.com" autoComplete="email" aria-invalid={!!errors.email} />
-              {errors.email && <em>{errors.email}</em>}
+              <span>Phone Number</span>
+              <input name="phone" type="tel" inputMode="numeric" maxLength={10} value={values.phone} onChange={onChange} placeholder="10-digit phone number" autoComplete="tel" aria-invalid={!!errors.phone} />
+              {errors.phone && <em>{errors.phone}</em>}
             </label>
           </div>
 
