@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  /* ===== Colors (from Elementor kit) ===== */
+  --color-bg: #121212;
+  --color-text: #B9B9B9;
+  --color-white: #FFFFFF;
+  --color-black: #121212;
+  --color-accent: #FF731D;
+  --color-primary: #5E2518;
+  --color-primary-dark: #301D0F;
+  --color-border: #525252;
+  --color-transparent: #00000000;
+
+  /* Elementor defaults (likely unused on this page) */
+  --color-el-primary: #6EC1E4;
+  --color-el-secondary: #54595F;
+  --color-el-text: #7A7A7A;
+  --color-el-accent: #61CE70;
+
+  /* ===== Font families ===== */
+  --font-heading: "Questrial", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-button: "Plus Jakarta Sans", sans-serif;
+  --font-alt: "Poppins", sans-serif;
+
+  /* ===== Font sizes ===== */
+  --fs-display: 182px;
+  --fs-h1: 56px;
+  --fs-poppins: 62px;
+  --fs-h2: 47px;
+  --fs-h3: 38px;
+  --fs-h4: 31px;
+  --fs-h5: 25px;
+  --fs-h6: 20px;
+  --fs-body: 16px;
+  --fs-small: 14px;
+
+  /* ===== Font weights ===== */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  /* ===== Line heights ===== */
+  --lh-display: 1em;
+  --lh-heading: 1.3em;
+  --lh-h1: 1.2em;
+  --lh-body: 1.7em;
+  --lh-button: 1em;
+
+  /* ===== Layout ===== */
+  --container-max-width: 1200px;
+  --content-size: 800px;
+  --wide-size: 1200px;
+  --section-padding-y: 128px;
+  --section-padding-x: 16px;
+  --gap-sm: 24px;
+  --gap-lg: 72px;
+  --block-gap: 24px;
+
+  /* ===== Cards / borders ===== */
+  --card-padding: 24px;
+  --card-radius: 16px;
+  --border-width: 1px;
+  --transition: 0.3s;
+
+  /* ===== Extra (easing used by the animations) ===== */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
