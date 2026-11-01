@@ -26,7 +26,7 @@ export default function App() {
         <Testimonials />
         <Awards />
         <Contact />
-        <Blog />
+        <Blog />  
         <CTA />
       </main>
       <Footer />
