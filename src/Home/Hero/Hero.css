@@ -65,7 +65,7 @@
 }
 
 .hero__title {
-  font-size: min(var(--fs-display), 17.5vw);
+  font-size: min(var(--fs-display), 15vw);
   line-height: var(--lh-display);
   white-space: nowrap;
   letter-spacing: 0;

@@ -20,7 +20,6 @@ export default function Pricing() {
                   <span className="pricing-card__tag">{plan.tag}</span>
                   <h3>{plan.name}</h3>
                   <div className="pricing-card__price">
-                    <span>$</span>
                     {plan.price}
                   </div>
                   <p>{plan.description}</p>

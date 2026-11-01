@@ -1,5 +1,5 @@
 // Placeholder photos (seeded, so they stay stable). Swap each URL for your own image.
-const p = (seed, w = 800, h = 800) => `https://picsum.photos/seed/photolio-${seed}/${w}/${h}`;
+const p = (seed, w = 800, h = 800) => `https://picsum.photos/seed/bms-studio-${seed}/${w}/${h}`;
 
 export const images = {
   hero: p("hero", 1920, 1100),

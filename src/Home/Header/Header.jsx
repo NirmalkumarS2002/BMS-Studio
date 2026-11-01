@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Logo, Plus, Menu, Close } from "../ui/Icons";
 import Button from "../ui/Button";
 import { nav } from "../../data/content";
@@ -6,13 +6,29 @@ import "./Header.css";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileHidden, setMobileHidden] = useState(false);
   const [open, setOpen] = useState(false);
   const [sub, setSub] = useState(null);
   const [active, setActive] = useState("home");
+  const lastScrollY = useRef(0);
 
-  // Sticky background after scrolling
+  // Keep the mobile header available when scrolling back up.
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      const delta = currentY - lastScrollY.current;
+      setScrolled(currentY > 24);
+
+      if (window.innerWidth > 900 || currentY <= 24) {
+        setMobileHidden(false);
+      } else if (delta > 4 && currentY > 80) {
+        setMobileHidden(true);
+      } else if (delta < -4) {
+        setMobileHidden(false);
+      }
+
+      lastScrollY.current = currentY;
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -47,9 +63,9 @@ export default function Header() {
   };
 
   return (
-    <header className={`header ${scrolled ? "is-scrolled" : ""} ${open ? "is-open" : ""}`}>
+    <header className={`header ${scrolled ? "is-scrolled" : ""} ${mobileHidden ? "is-hidden" : ""} ${open ? "is-open" : ""}`}>
       <div className="container header__bar">
-        <a href="#home" className="header__logo" aria-label="Photolio home" onClick={close}>
+        <a href="#home" className="header__logo" aria-label="BMS Studio home" onClick={close}>
           <Logo />
         </a>
 
@@ -85,12 +101,12 @@ export default function Header() {
               </li>
             ))}
             <li className="nav-pill__cta">
-              <Button href="#contact" onClick={close}>Get Started</Button>
+              <Button href="#contact" onClick={close}>Book a Shoot</Button>
             </li>
           </ul>
         </nav>
 
-        <Button href="#contact" className="header__cta">Get Started</Button>
+        <Button href="#contact" className="header__cta">Book a Shoot</Button>
 
         <button
           className="header__burger"

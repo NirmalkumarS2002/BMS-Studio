@@ -1,22 +1,20 @@
 import { images } from "./images";
 
-const LOREM_SHORT = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.";
-const LOREM_MED = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.";
-export const LOREM_LONG =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.";
+export const studioIntro = "BMS Studio is a photography studio in Karur, Tamil Nadu, creating thoughtful images for people, families, celebrations and businesses.";
+export const studioDetail = "Whether you are planning a portrait session, a wedding, an event or a brand shoot, we work with you to make photographs that feel personal and true to the moment.";
 
 export const nav = [
   { id: "home", label: "Home", href: "#home" },
   { id: "about", label: "About", href: "#about" },
   {
     id: "services",
-    label: "Service",
+    label: "Services",
     href: "#services",
     children: [
       { label: "Portrait", href: "#services" },
       { label: "Wedding", href: "#services" },
-      { label: "Commercial", href: "#services" },
-      { label: "Architectural", href: "#services" },
+      { label: "Events", href: "#services" },
+      { label: "Brands", href: "#services" },
     ],
   },
   { id: "blog", label: "Blog", href: "#blog" },
@@ -27,16 +25,16 @@ export const nav = [
     children: [
       { label: "Projects", href: "#projects" },
       { label: "Process", href: "#process" },
-      { label: "Testimonials", href: "#testimonials" },
-      { label: "Awards", href: "#awards" },
+      { label: "Our Approach", href: "#approach" },
+      { label: "The Experience", href: "#testimonials" },
       { label: "Contact", href: "#contact" },
     ],
   },
 ];
 
 export const heroCards = [
-  { img: images.heroCard1, title: "The Fishing Port of Seydisfjordur, Iceland.", meta: "Shot with Leika P300" },
-  { img: images.heroCard2, title: "A Hot Air Balloon Over the Cappadocian Valley.", meta: "Shot with Leika P300" },
+  { img: images.heroCard1, title: "Portraits with a personal touch", meta: "Portrait photography · Karur" },
+  { img: images.heroCard2, title: "Moments worth remembering", meta: "Wedding photography · Karur" },
 ];
 
 export const socials = [
@@ -48,99 +46,92 @@ export const socials = [
 
 /* col: which desktop column · tall: taller card · order: stacking order on mobile */
 export const projects = [
-  { order: 0, col: 1, tall: true, title: "Modern Minimalist Wedding - Sarah & James", category: "Wedding Photography", location: "Napa Valley, California", img: images.projects.wedding },
-  { order: 1, col: 2, title: "Tech Startup Brand Identity Campaign", category: "Commercial Photography", location: "Napa Valley, California", img: images.projects.tech },
-  { order: 2, col: 1, title: "Vogue Fashion Editorial - Urban Elegance", category: "Editorial Photography", location: "Austin, Texas", img: images.projects.vogue },
-  { order: 3, col: 2, title: "Real Estate Portfolio - Coastal Properties", category: "Architectural Photography", location: "New York, USA", img: images.projects.realEstate },
-  { order: 4, col: 1, title: "Artisan Jewelry Collection Launch", category: "Product Photography", location: "Washington, USA", img: images.projects.jewelry },
-  { order: 5, col: 2, tall: true, title: "Family Legacy Portrait Series", category: "Family Legacy Portrait Series", location: "Chicago, USA", img: images.projects.family },
-];
-
-export const stats = [
-  { value: 500, suffix: "+", label: "Projects Completed" },
-  { value: 15, suffix: "", label: "International Awards" },
-  { value: 98, suffix: "%", label: "Client Satisfaction" },
-  { value: 12, suffix: "", label: "Years Experience" },
+  { order: 0, col: 1, tall: true, title: "Wedding stories, thoughtfully captured", category: "Wedding Photography", location: "Karur, Tamil Nadu", img: images.projects.wedding },
+  { order: 1, col: 2, title: "Photography for local businesses", category: "Brand Photography", location: "Karur, Tamil Nadu", img: images.projects.tech },
+  { order: 2, col: 1, title: "Portraits that feel like you", category: "Portrait Photography", location: "Karur, Tamil Nadu", img: images.projects.vogue },
+  { order: 3, col: 2, title: "Spaces, details and architecture", category: "Interior Photography", location: "Karur, Tamil Nadu", img: images.projects.realEstate },
+  { order: 4, col: 1, title: "Products made memorable", category: "Product Photography", location: "Karur, Tamil Nadu", img: images.projects.jewelry },
+  { order: 5, col: 2, tall: true, title: "Family moments to keep", category: "Family Photography", location: "Karur, Tamil Nadu", img: images.projects.family },
 ];
 
 export const services = [
-  { title: "Portrait Photography Sessions", text: LOREM_SHORT, img: images.services.portrait },
-  { title: "Wedding Photography Coverage", text: LOREM_SHORT, img: images.services.wedding },
-  { title: "Commercial Photography Solutions", text: LOREM_SHORT, img: images.services.commercial },
-  { title: "Event Photography Services", text: LOREM_SHORT, img: images.services.event },
-  { title: "Editorial & Magazine Work", text: LOREM_SHORT, img: images.services.editorial },
-  { title: "Architectural Photography", text: LOREM_SHORT, img: images.services.architectural },
+  { title: "Portrait Photography", text: "Relaxed individual, couple and family portraits, planned around your style and comfort.", img: images.services.portrait },
+  { title: "Wedding Photography", text: "Honest photographs of the people, rituals and small moments that make your day yours.", img: images.services.wedding },
+  { title: "Brand Photography", text: "Clear, characterful images for local businesses, makers and growing brands.", img: images.services.commercial },
+  { title: "Event Photography", text: "The atmosphere, details and people that bring your celebration or gathering to life.", img: images.services.event },
+  { title: "Product Photography", text: "Carefully composed product images for catalogues, social media and promotions.", img: images.services.editorial },
+  { title: "Space Photography", text: "Interior and architecture photography that shows a space with clarity and care.", img: images.services.architectural },
 ];
 
 export const pricingPlans = [
   {
-    name: "Starter",
-    tag: "For personal shoots",
-    price: "399",
-    description: "Perfect for portraits, mini-brand sessions, and content refreshes.",
+    name: "Portraits",
+    tag: "Individuals and families",
+    price: "Custom",
+    description: "A portrait session shaped around the people, place and feeling you want to remember.",
     featured: false,
     features: [
-      "One location session",
-      "Up to 1 hour photography",
-      "30 edited images",
-      "Online gallery delivery",
-      "Two outfit changes",
+      "Pre-shoot conversation",
+      "Location and styling planning",
+      "Guided photography session",
+      "Carefully edited photographs",
+      "Delivery options discussed in advance",
     ],
   },
   {
-    name: "Signature",
-    tag: "Most popular",
-    price: "899",
-    description: "Designed for events, campaigns, and creators who need polished storytelling.",
+    name: "Celebrations",
+    tag: "Weddings and events",
+    price: "Custom",
+    description: "Photography coverage focused on the people, traditions and moments that matter to you.",
     featured: true,
     features: [
-      "Two shooting locations",
-      "Up to 4 hours coverage",
-      "80 edited images",
-      "Creative direction planning",
-      "Priority turnaround",
+      "Coverage planned for your event",
+      "A discussion of key moments",
+      "Natural, candid photographs",
+      "Careful image selection and editing",
+      "Schedule and delivery agreed together",
     ],
   },
   {
-    name: "Luxury",
-    tag: "Tailored experience",
-    price: "1,799",
-    description: "A premium collection for weddings, branded launches, and full-day editorial work.",
+    name: "For Business",
+    tag: "Products and brands",
+    price: "Custom",
+    description: "A considered image set for product launches, business profiles and ongoing brand content.",
     featured: false,
     features: [
-      "Full-day coverage",
-      "Unlimited planning support",
-      "200+ edited images",
-      "Print-ready gallery",
-      "Second shooter available",
+      "Brief and creative direction discussion",
+      "Product, team or workspace photography",
+      "Images suited to your intended use",
+      "Editing style agreed in advance",
+      "A quote based on your requirements",
     ],
   },
 ];
 
 export const steps = [
-  { no: "01", title: "Discovery Consultation", text: LOREM_MED },
-  { no: "02", title: "Detailed Planning Phase", text: LOREM_MED },
-  { no: "03", title: "Professional Shoot Day", text: LOREM_MED },
-  { no: "04", title: "Final Delivery Package", text: LOREM_MED },
+  { no: "01", title: "Tell us what you have in mind", text: "Share the occasion, people or products you would like photographed, along with your preferred date." },
+  { no: "02", title: "Plan the session", text: "We will discuss the location, timing and style so the shoot feels clear and comfortable." },
+  { no: "03", title: "Enjoy the shoot", text: "On the day, we will guide the session while making room for natural moments." },
+  { no: "04", title: "Receive your photographs", text: "Your selected images will be carefully edited and delivered using the agreed format and timeline." },
 ];
 
-export const testimonials = [
-  { name: "Sarah Chen", role: "Wedding Clients", text: LOREM_MED, avatar: images.avatars[0] },
-  { name: "Jennifer Martinez", role: "Marketing Director", text: LOREM_MED, avatar: images.avatars[1] },
-];
-export const testimonialFeature = { name: "David Kim", role: "Creative Director", text: LOREM_MED, img: images.testimonialFeature };
-
-export const awards = [
-  { no: "01", category: "Professional Category", date: "Feb 2024", title: "International Photography Awards 2024", img: images.awards[0] },
-  { no: "02", category: "Annual Competition", date: "Jun 2023", title: "Professional Photographers of America", img: images.awards[1] },
-  { no: "03", category: "Regional Award", date: "Mar 2025", title: "Regional Excellence in Wedding Photography", img: images.awards[2] },
-  { no: "04", category: "ASMP Excellence Award", date: "Mar 2026", title: "American Society of Media Photographers", img: images.awards[3] },
+export const studioExperience = [
+  { name: "Before the shoot", role: "A plan that fits your needs", text: "We start by understanding what you want to remember or share, then shape the shoot around your people, purpose and preferences." },
+  { name: "During the shoot", role: "A relaxed, guided session", text: "Whether you are used to being photographed or not, we make space for direction, conversation and natural moments." },
+  { name: "After the shoot", role: "Thoughtful finishing", text: "Each selected photograph is reviewed and edited with care. Delivery details are agreed with you before the session." },
 ];
 
-export const serviceOptions = ["Portrait Photography", "Wedding Photography", "Commercial Photography", "Event Photography", "Editorial & Magazine", "Architectural Photography"];
+export const studioHighlights = [
+  { no: "01", category: "Portraits", location: "Karur", title: "Personal, unhurried sessions", text: "Portraits for individuals, couples and families, with thoughtful guidance from planning through the shoot.", img: images.awards[0] },
+  { no: "02", category: "Weddings and events", location: "Karur and nearby", title: "The moments in between", text: "Alongside the important rituals, we look for the expressions, details and connections that make a gathering yours.", img: images.awards[1] },
+  { no: "03", category: "Businesses", location: "Karur", title: "Images with a clear purpose", text: "Photography for products, teams and spaces, planned around where and how you want to use the images.", img: images.awards[2] },
+  { no: "04", category: "Every session", location: "Made around you", title: "A collaborative process", text: "We discuss the details in advance, keep the session comfortable and agree on delivery expectations together.", img: images.awards[3] },
+];
+
+export const serviceOptions = ["Portrait Photography", "Wedding Photography", "Event Photography", "Brand Photography", "Product Photography", "Interior Photography"];
 
 export const posts = [
-  { date: "April 27, 2026", title: "Mastering Natural Light Portrait Photograph", img: images.blog[0] },
-  { date: "April 27, 2026", title: "Behind the Scenes of a Fashion Editorial Shoot", img: images.blog[1] },
-  { date: "April 27, 2026", title: "Essential Camera Gear for Wedding Photographers", img: images.blog[2] },
+  { date: "Portrait guide", title: "Choosing a comfortable location for your portrait session", img: images.blog[0] },
+  { date: "Wedding guide", title: "Small moments to make room for on your wedding day", img: images.blog[1] },
+  { date: "Business guide", title: "Planning a useful set of photographs for your business", img: images.blog[2] },
 ];

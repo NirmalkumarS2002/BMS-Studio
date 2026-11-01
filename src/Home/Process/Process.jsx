@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Reveal from "../ui/Reveal";
 import { Play, Close } from "../ui/Icons";
 import { images } from "../../data/images";
-import { steps, LOREM_LONG } from "../../data/content";
+import { steps, studioDetail } from "../../data/content";
 import "./Process.css";
 
 function VideoModal({ onClose }) {
@@ -40,7 +40,7 @@ export default function Process() {
         <div className="process__intro">
           <div>
             <Reveal as="span" className="eyebrow">[04] Creative Process</Reveal>
-            <Reveal as="h2" delay={100} className="process__title">How We Create Unforgettable Images</Reveal>
+            <Reveal as="h2" delay={100} className="process__title">From first conversation to finished photographs</Reveal>
           </div>
 
           <Reveal delay={200} className="process__video-wrap">
@@ -48,7 +48,7 @@ export default function Process() {
               <img src={images.processVideo} alt="" loading="lazy" />
               <span className="video-thumb__play"><Play width={20} height={20} /></span>
             </button>
-            <p>{LOREM_LONG}</p>
+            <p>{studioDetail}</p>
           </Reveal>
         </div>
 

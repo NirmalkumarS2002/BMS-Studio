@@ -44,14 +44,14 @@ export default function Contact() {
       <div className="container contact__grid">
         <div className="contact__info">
           <Reveal as="span" className="eyebrow">[07] Contact</Reveal>
-          <Reveal as="h2" delay={100} className="contact__title">Let's Discuss Your Photography Project</Reveal>
+          <Reveal as="h2" delay={100} className="contact__title">Tell us about your photography plans</Reveal>
           <Reveal as="p" delay={200}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+            Planning portraits, a wedding, an event or a business shoot in Karur? Share a few details and BMS Studio will get back to you.
           </Reveal>
           <Reveal delay={300} className="contact__map">
             <iframe
               title="Studio location"
-              src="https://www.google.com/maps?q=London+Eye&output=embed"
+              src="https://www.google.com/maps?q=Karur,+Tamil+Nadu&output=embed"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />

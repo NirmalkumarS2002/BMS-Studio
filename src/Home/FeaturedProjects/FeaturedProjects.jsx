@@ -1,7 +1,7 @@
 import Reveal from "../ui/Reveal";
 import SectionHeading from "../ui/SectionHeading";
 import { ArrowUpRight, Folder, Pin } from "../ui/Icons";
-import { projects, LOREM_LONG } from "../../data/content";
+import { projects, studioIntro } from "../../data/content";
 import "./FeaturedProjects.css";
 
 function ProjectCard({ p, index }) {
@@ -35,8 +35,8 @@ export default function FeaturedProjects() {
   return (
     <section id="projects" className="section">
       <div className="container">
-        <SectionHeading index="01" label="Featured Project" title="Signature Projects From Editorial Photography">
-          <p>{LOREM_LONG}</p>
+        <SectionHeading index="01" label="Photography Portfolio" title="Photography for life and work in Karur">
+          <p>{studioIntro}</p>
         </SectionHeading>
 
         <div className="projects">

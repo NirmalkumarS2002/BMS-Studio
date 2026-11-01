@@ -28,7 +28,7 @@ export default function Hero() {
             key={`${src}-${index}`}
             src={src}
             alt=""
-            fetchpriority={index === 0 ? "high" : undefined}
+            fetchPriority={index === 0 ? "high" : undefined}
             className={`hero__bg-image ${index === activeSlide ? "is-active" : ""}`}
           />
         ))}
@@ -37,15 +37,15 @@ export default function Hero() {
 
       <div className="container hero__inner">
         <div className="hero__top">
-          <h1 className="hero__title" aria-label="Photolio">
-            {"PHOTOLIO".split("").map((c, i) => (
+          <h1 className="hero__title" aria-label="BMS Studio">
+            {"BMStudio".split("").map((c, i) => (
               <span key={i} className="hero__letter" style={{ "--i": i }} aria-hidden="true">{c}</span>
             ))}
           </h1>
 
           <Reveal as="p" delay={700} className="hero__tagline">
-            <span>Capturing life's</span>
-            <span>Extraordinary moments</span>
+            <span>Photography for people,</span>
+            <span>moments and businesses in Karur</span>
           </Reveal>
 
           <Reveal delay={850}>
@@ -69,7 +69,7 @@ export default function Hero() {
           </div>
 
           <Reveal variant="right" delay={1100} className="hero__social">
-            <p>Follow us on social media</p>
+            <p>Find BMS Studio online</p>
             <ul>
               {socials.map((s) => {
                 const Icon = socialIcons[s.icon];

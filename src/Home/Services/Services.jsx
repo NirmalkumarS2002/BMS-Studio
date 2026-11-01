@@ -2,16 +2,16 @@ import Reveal from "../ui/Reveal";
 import Button from "../ui/Button";
 import SectionHeading from "../ui/SectionHeading";
 import { ArrowUpRight } from "../ui/Icons";
-import { services } from "../../data/content";
+import { services, studioDetail } from "../../data/content";
 import "./Services.css";
 
 export default function Services() {
   return (
     <section id="services" className="section">
       <div className="container">
-        <SectionHeading index="03" label="Services" title="Full-Service Photography Covering Requirements">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-          <Button href="#contact" variant="outline">Explore Service</Button>
+        <SectionHeading index="03" label="Photography Services" title="For your people, occasions and business">
+          <p>{studioDetail}</p>
+          <Button href="#contact" variant="outline">Ask about a shoot</Button>
         </SectionHeading>
 
         <div className="services">

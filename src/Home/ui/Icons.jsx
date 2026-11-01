@@ -51,6 +51,6 @@ export const Logo = () => (
         <rect x="22" y="4" width="4" height="20" rx="2" transform="skewX(-8)" />
       </g>
     </svg>
-    Photolio
+    BMS Studio
   </span>
 );

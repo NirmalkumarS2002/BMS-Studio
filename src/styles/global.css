@@ -1,7 +1,7 @@
 /* Reset + base. Every value comes from variables.css. */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 80px; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 80px; overflow-x: clip; }
 
 body {
   background: var(--color-bg);
@@ -10,7 +10,7 @@ body {
   font-size: var(--fs-body);
   font-weight: var(--fw-regular);
   line-height: var(--lh-body);
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
 

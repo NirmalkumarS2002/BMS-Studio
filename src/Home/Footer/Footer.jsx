@@ -11,8 +11,8 @@ export default function Footer() {
       <div className="container">
         <Reveal className="footer__top">
           <div className="footer__brand">
-            <a href="#home" aria-label="Photolio home"><Logo /></a>
-            <p>Capturing life's extraordinary moments, one frame at a time.</p>
+            <a href="#home" aria-label="BMS Studio home"><Logo /></a>
+            <p>Photography for people, celebrations and businesses in Karur, Tamil Nadu.</p>
           </div>
 
           <ul className="footer__links">
@@ -34,7 +34,7 @@ export default function Footer() {
         </Reveal>
 
         <div className="footer__bottom">
-          <p>© {new Date().getFullYear()} Photolio. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} BMS Studio. All rights reserved.</p>
           <a href="#home" className="footer__top-link">Back to top ↑</a>
         </div>
       </div>

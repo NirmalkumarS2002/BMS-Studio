@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
 import Reveal from "../ui/Reveal";
-import CountUp from "../ui/CountUp";
 import useInView from "../../hooks/useInView";
 import { images } from "../../data/images";
-import { stats } from "../../data/content";
 import "./Experience.css";
 
 // Words animate in one by one; {pill:true} renders the inline photo.
 const tokens = [
-  "Extensive", "expertise", { pill: true }, "gained", "through", "numerous", "successful",
-  "projects", "and", "recognised", "by", "industry", "leaders", "and", "clients", "worldwide.",
+  "Thoughtful", "photography", { pill: true }, "for", "people", "and", "businesses", "in",
+  "Karur,", "with", "careful", "planning", "a", "relaxed", "shoot", "and", "considered", "editing.",
 ];
 
 export default function Experience() {
@@ -65,15 +63,6 @@ export default function Experience() {
             </h2>
           </div>
         </div>
-
-        <ul className="stats">
-          {stats.map((s, i) => (
-            <Reveal as="li" key={s.label} delay={i * 120} className="stat">
-              <strong className="stat__value"><CountUp value={s.value} suffix={s.suffix} /></strong>
-              <span className="stat__label"><i className="dot" />{s.label}</span>
-            </Reveal>
-          ))}
-        </ul>
       </div>
     </section>
   );

@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 100;
-  transition: background var(--transition) var(--ease), backdrop-filter var(--transition) var(--ease);
+  transition: background var(--transition) var(--ease), backdrop-filter var(--transition) var(--ease), transform var(--transition) var(--ease);
   animation: header-in calc(var(--transition) * 3) var(--ease) both;
 }
 @keyframes header-in { from { opacity: 0; transform: translateY(-24px); } }
@@ -89,6 +89,8 @@
 
 /* ---------- Mobile ---------- */
 @media (max-width: 900px) {
+  .header.is-hidden:not(.is-open) { transform: translateY(-100%); }
+
   .header__bar { display: flex; justify-content: space-between; }
   .header__cta { display: none; }
 

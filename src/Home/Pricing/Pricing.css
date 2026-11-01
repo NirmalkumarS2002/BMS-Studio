@@ -115,3 +115,24 @@
     margin-inline: auto;
   }
 }
+
+@media (max-width: 560px) {
+  .pricing-grid { gap: 16px; }
+  .pricing-card {
+    gap: 18px;
+    padding: 22px 18px;
+  }
+  .pricing-card__header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 10px 12px;
+  }
+  .pricing-card__tag { padding: 5px 9px; }
+  .pricing-card__tag,
+  .pricing-card__header p { grid-column: 1 / -1; }
+  .pricing-card__price { font-size: clamp(1.75rem, 8vw, 2rem); }
+  .pricing-card__header p { font-size: var(--fs-small); line-height: 1.5; }
+  .pricing-card__list { gap: 6px; }
+  .pricing-card__list li { padding-left: 20px; font-size: var(--fs-small); line-height: 1.45; }
+}

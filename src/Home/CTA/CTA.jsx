@@ -12,10 +12,10 @@ export default function CTA() {
           <div className="cta__side cta__side--right" aria-hidden="true"><img src={images.ctaRight} alt="" loading="lazy" /></div>
 
           <div className="cta__content">
-            <span className="eyebrow">Ready when you are</span>
-            <h2>Let's Create Something Timeless Together</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-            <Button href="#contact">Book a Session</Button>
+            <span className="eyebrow">BMS Studio · Karur</span>
+            <h2>Let’s plan photographs that feel like you</h2>
+            <p>Tell us what you would like photographed and we’ll talk through the right session for you.</p>
+            <Button href="#contact">Enquire about a shoot</Button>
           </div>
         </Reveal>
       </div>
